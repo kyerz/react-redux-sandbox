@@ -6,11 +6,20 @@ class Article extends Component {
     isInEditMode: false
   }
 
+  toggleEditMode = () => {
+    this.setState({ isInEditMode: !this.state.isInEditMode })
+  }
+
   render() {
     return (
       <div>
-        <button onClick={() => this.props.editArticle()}>Edit</button>
-        {this.props.article.quantity} {this.props.article.name}
+        <button onClick={() => this.toggleEditMode()}>Edit</button>
+        {
+          this.state.isInEditMode ?
+            <span>Edit mode</span>
+            :
+            <span>{this.props.article.quantity} {this.props.article.name}</span>
+        }
         <button onClick={() => this.props.removeArticle(this.props.article)}>Delete</button>
       </div>
     )
