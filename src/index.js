@@ -9,8 +9,7 @@ import { Provider } from 'react-redux'
 const articlesReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_ARTICLE':
-      console.log('ADD_ARTICLE')
-      return state
+      return [...state, action.payload]
     default:
       return state
   }

@@ -25,7 +25,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     addArticle: (article) => {
-      dispatch({ type: 'ADD_ARTICLE', article })
+      dispatch({ type: 'ADD_ARTICLE', payload: article })
     }
   }
 }
