@@ -15,6 +15,11 @@ class Article extends Component {
     this.props.editArticle(article)
   }
 
+  handleEditName = (event, article) => {
+    article.name = event.target.value
+    this.props.editArticle(article)
+  }
+
   render() {
     return (
       <div>
@@ -23,6 +28,7 @@ class Article extends Component {
           this.state.isInEditMode ?
             <span>
               <input type="number" value={this.props.article.quantity} onChange={event => this.handleEditQuantity(event, this.props.article)} />
+              <input type="text" value={this.props.article.name} onChange={event => this.handleEditName(event, this.props.article)}></input>
             </span>
             :
             <span>{this.props.article.quantity} {this.props.article.name}</span>
