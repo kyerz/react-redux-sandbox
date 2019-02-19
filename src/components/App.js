@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from './Header'
 import Form from './Form'
+import ArticleList from './ArticleList'
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <div>
         <Header />
         <Form addArticle={this.props.addArticle} />
+        <ArticleList articles={this.props.articles} />
       </div>
     )
   }

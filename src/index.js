@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 const articlesReducer = (state = [], action) => {
   switch (action.type) {
     case 'ADD_ARTICLE':
+      action.payload.id = Date.now()
       return [...state, action.payload]
     default:
       return state
