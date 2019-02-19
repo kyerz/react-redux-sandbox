@@ -8,7 +8,6 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
     this.props.addArticle(this.state)
     this.setState({ name: '', quantity: 0 })
   }
@@ -16,10 +15,10 @@ class Form extends Component {
   render() {
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="number" placeholder="quantity" onChange={(e) => this.setState({ quantity: e.target.value })} value={this.state.quantity} />
-        <input type="text" placeholder="article" onChange={(e) => this.setState({ name: e.target.value })} value={this.state.name} />
-        <button type="submit">Add to cart</button>
+      <form onSubmit={this.handleSubmit} className="form">
+        <input className="article-quantity" type="number" placeholder="quantity" onChange={(e) => this.setState({ quantity: e.target.value })} value={this.state.quantity} />
+        <input className="article-name" type="text" placeholder="article" onChange={(e) => this.setState({ name: e.target.value })} value={this.state.name} />
+        <button className="btn btn-info" type="submit">Add to cart</button>
       </form >
     )
   }

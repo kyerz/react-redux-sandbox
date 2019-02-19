@@ -11,8 +11,10 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Form addArticle={this.props.addArticle} />
-        <ArticleList articles={this.props.articles} removeArticle={this.props.removeArticle} editArticle={this.props.editArticle} />
+        <div className="main-content">
+          <Form addArticle={this.props.addArticle} />
+          <ArticleList articles={this.props.articles} removeArticle={this.props.removeArticle} editArticle={this.props.editArticle} />
+        </div>
       </div>
     )
   }

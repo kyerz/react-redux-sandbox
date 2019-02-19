@@ -23,17 +23,17 @@ class Article extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.toggleEditMode()}>Edit</button>
         {
           this.state.isInEditMode ?
             <span>
-              <input type="number" value={this.props.article.quantity} onChange={event => this.handleEditQuantity(event, this.props.article)} />
-              <input type="text" value={this.props.article.name} onChange={event => this.handleEditName(event, this.props.article)}></input>
+              <input className="edit-number" type="number" value={this.props.article.quantity} onChange={event => this.handleEditQuantity(event, this.props.article)} />
+              <input className="edit-name" type="text" value={this.props.article.name} onChange={event => this.handleEditName(event, this.props.article)}></input>
             </span>
             :
             <span>{this.props.article.quantity} {this.props.article.name}</span>
         }
-        <button onClick={() => this.props.removeArticle(this.props.article)}>Delete</button>
+        <button className="btn btn-success edit-btn" onClick={() => this.toggleEditMode()}>Edit</button>
+        <button className="btn btn-danger" onClick={() => this.props.removeArticle(this.props.article)}>Delete</button>
       </div>
     )
   }
