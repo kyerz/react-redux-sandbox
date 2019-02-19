@@ -14,8 +14,7 @@ const articlesReducer = (state = [], action) => {
     case 'REMOVE_ARTICLE':
       return state.filter(article => article.id !== action.payload.id)
     case 'EDIT_ARTICLE':
-      console.log('EDIT_ARTICLE REDUCER')
-      return state
+      return [...state]
     default:
       return state
   }
