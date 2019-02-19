@@ -11,6 +11,9 @@ const articlesReducer = (state = [], action) => {
     case 'ADD_ARTICLE':
       action.payload.id = Date.now()
       return [...state, action.payload]
+    case 'REMOVE_ARTICLE':
+      console.log('REMOVE_ARTICLE REDUCER')
+      return state
     default:
       return state
   }

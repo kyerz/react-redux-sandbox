@@ -22,6 +22,10 @@ const addArticleActionCreator = (article) => {
   return { type: 'ADD_ARTICLE', payload: article }
 }
 
+const removeArticleActionCreator = (article) => {
+  return { type: 'REMOVE_ARTICLE', payload: article }
+}
+
 const mapStateToProps = state => {
   return {
     articles: state.articles
@@ -32,6 +36,9 @@ const mapDispatchToProps = dispatch => {
   return {
     addArticle: (article) => {
       dispatch(addArticleActionCreator(article))
+    },
+    removeArticle: (article) => {
+      dispatch(removeArticleActionCreator(article))
     }
   }
 }
