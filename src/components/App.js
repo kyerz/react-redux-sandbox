@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Form />
+        <Form addArticle={this.props.addArticle} />
         <button onClick={() => this.props.test()}>click</button>
       </div>
     )
@@ -25,8 +25,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    test: () => {
-      dispatch({ type: 'TEST' })
+    addArticle: (article) => {
+      dispatch({ type: 'ADD_ARTICLE', article })
     }
   }
 }
