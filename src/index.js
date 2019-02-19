@@ -12,8 +12,7 @@ const articlesReducer = (state = [], action) => {
       action.payload.id = Date.now()
       return [...state, action.payload]
     case 'REMOVE_ARTICLE':
-      console.log('REMOVE_ARTICLE REDUCER')
-      return state
+      return state.filter(article => article.id !== action.payload.id)
     default:
       return state
   }

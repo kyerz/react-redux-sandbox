@@ -12,7 +12,7 @@ class App extends Component {
       <div>
         <Header />
         <Form addArticle={this.props.addArticle} />
-        <ArticleList articles={this.props.articles} />
+        <ArticleList articles={this.props.articles} removeArticle={this.props.removeArticle} />
       </div>
     )
   }
