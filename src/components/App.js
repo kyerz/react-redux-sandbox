@@ -11,7 +11,6 @@ class App extends Component {
       <div>
         <Header />
         <Form addArticle={this.props.addArticle} />
-        <button onClick={() => this.props.test()}>click</button>
       </div>
     )
   }
@@ -19,7 +18,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    mocks: state.mock
+    articles: state.articles
   }
 }
 
