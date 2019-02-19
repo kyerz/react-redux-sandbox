@@ -12,7 +12,7 @@ class App extends Component {
       <div>
         <Header />
         <Form addArticle={this.props.addArticle} />
-        <ArticleList articles={this.props.articles} removeArticle={this.props.removeArticle} />
+        <ArticleList articles={this.props.articles} removeArticle={this.props.removeArticle} editArticle={this.props.editArticle} />
       </div>
     )
   }
@@ -24,6 +24,10 @@ const addArticleActionCreator = (article) => {
 
 const removeArticleActionCreator = (article) => {
   return { type: 'REMOVE_ARTICLE', payload: article }
+}
+
+const editArticleActionCreator = (article) => {
+  return { type: 'EDIT_ARTICLE', payload: article }
 }
 
 const mapStateToProps = state => {
@@ -39,6 +43,9 @@ const mapDispatchToProps = dispatch => {
     },
     removeArticle: (article) => {
       dispatch(removeArticleActionCreator(article))
+    },
+    editArticle: (article) => {
+      dispatch(editArticleActionCreator(article))
     }
   }
 }
