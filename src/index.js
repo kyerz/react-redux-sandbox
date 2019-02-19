@@ -6,7 +6,7 @@ import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 
 
-const mockReducer = (state = [], action) => {
+const articlesReducer = (state = [], action) => {
   switch (action.type) {
     case 'TEST':
       console.log('TEST reducer')
@@ -16,6 +16,6 @@ const mockReducer = (state = [], action) => {
   }
 }
 
-const store = createStore(combineReducers({ mock: mockReducer }), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(combineReducers({ mock: articlesReducer }), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.querySelector('#root'))
